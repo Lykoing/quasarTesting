@@ -4,6 +4,7 @@ import {
 } from "@capacitor/background-runner";
 
 addEventListener("showGeo", async (resolve, reject, args) => {
+  console.log("Из евента");
   const location = await CapacitorGeolocation.getCurrentPosition();
   const options = {
     notifications: [

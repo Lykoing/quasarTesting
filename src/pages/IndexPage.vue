@@ -36,13 +36,15 @@ onMounted(async () => {
   geoId = Geolocation.watchPosition({}, async (newPosition, err) => {
     console.log("New GPS position");
     position.value = newPosition;
-
+  });
+  setTimeout(async () => {
+    console.log("Из таймаута");
     const result = await BackgroundRunner.dispatchEvent({
       label: "org.capacitor.quasar.app",
       event: "showGeo",
-      details: { position: newPosition.coords.latitude },
+      details: {},
     });
-  });
+  }, 1000);
 });
 
 onBeforeUnmount(() => {
