@@ -4,5 +4,26 @@
   "webDir": "www",
   "server": {
     "androidScheme": "https"
+  },
+  "plugins": {
+    "LocalNotifications": {
+      "smallIcon": "ic_stat_icon_config_sample",
+      "iconColor": "#488AFF"
+    },
+    "PushNotifications": {
+      "presentationOptions": [
+        "badge",
+        "sound",
+        "alert"
+      ]
+    },
+    "BackgroundRunner": {
+      "label": "org.capacitor.quasar.app",
+      "src": "runners/background.js",
+      "event": "showGeo",
+      "repeat": true,
+      "interval": 1,
+      "autoStart": true
+    }
   }
 }
